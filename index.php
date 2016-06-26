@@ -1,14 +1,16 @@
 <?php
-    require 'autoLoad.php';
-    use Alfa\BaseBD;
+    require 'autoload.php';
+
+    use Alfa\BaseDeDados;
     use Alfa\GerenciadorBD;
     use Alfa\Aluno;
+    
     $sgbd = new GerenciadorBD();
     $sgbd->setEndereco('localhost');
     $sgbd->setPorta(3306);
     $sgbd->setUsuario('root');
-    $sgbd->setSenha('');
-    $bd = new BaseBD('mysql', $sgbd);
+    $sgbd->setSenha('123456');
+    $bd = new BaseDeDados('mysql', $sgbd);
     try {
         $bd->conectar();
     } catch (Exception $e) {
